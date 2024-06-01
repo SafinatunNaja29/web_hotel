@@ -7,6 +7,7 @@ body {
   color: #6c757d;
   position: relative; }
 
+
 ::-moz-selection {
   color: #fff;
   background: #ffba5a; }
@@ -22,6 +23,7 @@ a {
   text-decoration: none; }
   a:hover {
     text-decoration: none; }
+
 
 h1, h2, h3, h4, h5 {
   color: #000;
