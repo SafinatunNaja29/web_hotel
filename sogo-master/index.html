@@ -100,20 +100,20 @@
         <div class="row check-availabilty" id="next">
           <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
 
-            <form action="#">
+            <form action="check.html" method="GET">
               <div class="row">
                 <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                   <label for="checkin_date" class="font-weight-bold text-black">Check In</label>
                   <div class="field-icon-wrap">
                     <div class="icon"><span class="icon-calendar"></span></div>
-                    <input type="text" id="checkin_date" class="form-control">
+                    <input type="text" id="checkin_date" name="checkin_date" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                   <label for="checkout_date" class="font-weight-bold text-black">Check Out</label>
                   <div class="field-icon-wrap">
                     <div class="icon"><span class="icon-calendar"></span></div>
-                    <input type="text" id="checkout_date" class="form-control">
+                    <input type="text" id="checkout_date" name="checkout_date" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
@@ -122,11 +122,11 @@
                       <label for="adults" class="font-weight-bold text-black">Adults</label>
                       <div class="field-icon-wrap">
                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="" id="adults" class="form-control">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4+</option>
+                        <select name="adults" id="adults" class="form-control">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4+">4+</option>
                         </select>
                       </div>
                     </div>
@@ -134,22 +134,23 @@
                       <label for="children" class="font-weight-bold text-black">Children</label>
                       <div class="field-icon-wrap">
                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="" id="children" class="form-control">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4+</option>
+                        <select name="children" id="children" class="form-control">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4+">4+</option>
                         </select>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-3 align-self-end">
-                  <button class="btn btn-primary btn-block text-white">Check Availabilty</button>
+                  <button type="submit" class="btn btn-primary btn-block text-white">Check Availability</button>
                 </div>
               </div>
             </form>
-          </div>
+            
+            
 
 
         </div>
@@ -180,6 +181,7 @@
             <h2 class="heading" data-aos="fade-up">Rooms &amp; Suites</h2>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
             <a href="#" class="room">
@@ -353,7 +355,7 @@
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$42.00</span>
                     <h3 class="text-white"><a href="#" class="text-white">Apple Strudel</a></h3>
-                    <p class="text-white text-opacity-7">nama hidangan tradisional khas negara Austria yang biasa disajikan sebagai makanan penutup.</p>
+                    <p class="text-white text-opacity-7">a traditional Austrian dish usually served as dessert.</p>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$7.35</span>
@@ -363,7 +365,7 @@
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$22.00</span>
                     <h3 class="text-white"><a href="#" class="text-white">Ice Cream Sundae</a></h3>
-                    <p class="text-white text-opacity-7">makanan penutup es krim yang biasanya terdiri dari satu atau lebih sendok es krim dengan saus atau sirup.</p>
+                    <p class="text-white text-opacity-7">an ice cream dessert that usually consists of one or more scoops of ice cream with sauce or syrup.</p>
                   </div>
                 </div>
               </div>
@@ -374,34 +376,34 @@
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$32.00</span>
                     <h3 class="text-white"><a href="#" class="text-white">Spring Water</a></h3>
-                    <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="text-white text-opacity-7">water that comes from underground formations, where water flows naturally to the earth's surface. To be classified as spring water, the water must be obtained in spring.</p>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$14.00</span>
                     <h3 class="text-white"><a href="#" class="text-white">Coke, Diet Coke, Coke Zero</a></h3>
-                    <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="text-white text-opacity-7">drinks that still produce the same taste, but contain little or no use at all.</p>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$93.00</span>
                     <h3 class="text-white"><a href="#" class="text-white">Orange Fanta</a></h3>
-                    <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="text-white text-opacity-7">The orange drink with the sensation of soda in it is now available in fresh Fanta Orange.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$18.00</span>
                     <h3 class="text-white"><a href="#" class="text-white">Lemonade, Lemon Squash</a></h3>
-                    <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="text-white text-opacity-7">has a taste that tends to be sour and slightly sweet. And, this drink can help quench thirst and refresh.</p>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$38.35</span>
                     <h3 class="text-white"><a href="#" class="text-white">Sparkling Mineral Water</a></h3>
-                    <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="text-white text-opacity-7">a type of drinking water that is clear, tasteless and odorless.</p>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">$69.00</span>
                     <h3 class="text-white"><a href="#" class="text-white">Lemon, Lime &amp; Bitters</a></h3>
-                    <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="text-white text-opacity-7">bitter tasting alcoholic drink. This drink can generally be used as medicine, which is why bitter is very suitable as an important ingredient in bars.</p>
                   </div>
                 </div>
               </div>
@@ -574,9 +576,9 @@
           </div>
           <div class="col-md-3 mb-5 pr-md-5 contact-info">
             <!-- <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li> -->
-            <p><span class="d-block"><span class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span> 198 Yogyakarta, <br> Indonesia</span></p>
+            <p><span class="d-block"><span class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span> 198 West 21th Street, <br> Suite 721 New York NY 10016</span></p>
             <p><span class="d-block"><span class="ion-ios-telephone h5 mr-3 text-primary"></span>Phone:</span> <span> (+1) 435 3533</span></p>
-            <p><span class="d-block"><span class="ion-ios-email h5 mr-3 text-primary"></span>Email:</span> <span> group4@domain.com</span></p>
+            <p><span class="d-block"><span class="ion-ios-email h5 mr-3 text-primary"></span>Email:</span> <span> info@domain.com</span></p>
           </div>
           <div class="col-md-3 mb-5">
             <p>Sign up for our newsletter</p>
