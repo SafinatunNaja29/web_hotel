@@ -22,6 +22,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="./js/script.js">
 	<title>Login</title>
 </head>
 
@@ -49,7 +50,7 @@
 	</div>
 
 	
-	  <script>
+	<script>
         function validateLogin() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
@@ -60,8 +61,8 @@
                 return false;
             }
 
-            // If all validations pass, submit the form
-            document.getElementById("loginForm").submit();
+            // If all validations pass, redirect to another page or perform the login logic here
+            window.location.href = "/sogo-master/index.html";
         }
     </script>
 	<script src="script.js"></script>
