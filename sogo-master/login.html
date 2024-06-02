@@ -22,7 +22,6 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="./js/script.js">
 	<title>Login</title>
 </head>
 
@@ -36,11 +35,13 @@
 					</center>
 					<div class="row d-flex justify-content-center">
 						<div class="col-sm-12 col-lg-7 mb-4">
-							<input type="text" name="username" class="form-control mb-4" placeholder="Username">
-							<input type="password" name="password" class="form-control mb-4" placeholder="Password">
-							<a href="/sogo-master/index.html" class="hvnb">
-								<button class="btn bg-website text-white btn-block mb-3">Login</button>
-							</a>
+							<form id="loginForm" onsubmit="return validateLogin()">
+								<input type="text" id="username" name="username" class="form-control mb-2" placeholder="Username">
+								<small id="usernameError" class="text-danger d-none">Username harus diisi.</small>
+								<input type="password" id="password" name="password" class="form-control mb-2" placeholder="Password">
+								<small id="passwordError" class="text-danger d-none">Password harus diisi.</small>
+								<button type="submit" class="btn bg-website text-white btn-block mb-3">Login</button>
+							</form>
 							<a href="registrasi.html" class="float-right">Belum punya akun?</a>
 						</div>
 					</div>
@@ -49,23 +50,66 @@
 		</div>
 	</div>
 
-	
 	<script>
         function validateLogin() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
+            var usernameError = document.getElementById("usernameError");
+            var passwordError = document.getElementById("passwordError");
 
             // Check if username and password are not empty
+            if (username.trim() === "") {
+                usernameError.classList.remove("d-none");
+            } else {
+                usernameError.classList.add("d-none");
+            }
+
+            if (password.trim() === "") {
+                passwordError.classList.remove("d-none");
+            } else {
+                passwordError.classList.add("d-none");
+            }
+
             if (username.trim() === "" || password.trim() === "") {
-                alert("Username dan password harus diisi.");
                 return false;
             }
 
-            // If all validations pass, redirect to another page or perform the login logic here
-            window.location.href = "/sogo-master/index.html";
+            // Simulate login validation
+            if (username === "user" && password === "user") {
+                alert("Login berhasil!");
+                window.location.href = "/sogo-master/index.html"; // Redirect to the main page
+                return false;
+            } else {
+                alert("Username atau password salah. Silakan coba lagi.");
+                return false;
+            }
         }
-    </script>
-	<script src="script.js"></script>
 
+        function checkInput() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var usernameError = document.getElementById("usernameError");
+            var passwordError = document.getElementById("passwordError");
+
+            if (username.trim() === "") {
+                usernameError.classList.remove("d-none");
+            } else {
+                usernameError.classList.add("d-none");
+            }
+
+            if (password.trim() === "") {
+                passwordError.classList.remove("d-none");
+            } else {
+                passwordError.classList.add("d-none");
+            }
+        }
+
+        document.getElementById("username").addEventListener("input", checkInput);
+        document.getElementById("password").addEventListener("input", checkInput);
+    </script>
+	
+	<script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
