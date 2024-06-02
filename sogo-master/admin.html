@@ -1,212 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sogo Hotel by Kelompok 4 - Admin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Sogo Hotel by Kelompok 4 - Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/fancybox.min.css">
-    
-    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
 
-    <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/aos.css">
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/jquery.timepicker.css">
+<link rel="stylesheet" href="css/fancybox.min.css">
+
+<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+<link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+<!-- Theme Style -->
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div id="loginForm" class="mt-5">
-            <h1 class="mt-5">Admin Login</h1>
-            <form onsubmit="return validateLogin()">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" required>
-                    <small id="usernameError" class="text-danger d-none">Username harus diisi.</small>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" required>
-                    <small id="passwordError" class="text-danger d-none">Password harus diisi.</small>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-        </div>
-        <div id="adminPanel" style="display: none;">
-            <h1 class="mt-5">Admin Panel</h1>
-            <div class="row mt-4">
-                <div class="col">
-                    <button class="btn btn-primary" onclick="toggleKelolaKamar()">Lihat Kelola Kamar</button>
-                    <button class="btn btn-primary" onclick="togglePengunjung()">Lihat Pengunjung</button>
-                </div>
-            </div>
-            <div id="kelolaKamar" style="display: none;">
-                <h2 class="mt-5">Kelola Kamar</h2>
-                <table class="table table-striped mt-4">
-                    <thead>
-                        <tr>
-                            <th>Nama Kamar</th>
-                            <th>Deskripsi</th>
-                            <th>Jumlah Kamar</th>
-                            <th>Harga / per night</th>
-                            <th>Edit</th>
-                        </tr>
-                    </thead>
-                    <tbody id="daftarKamar">
-                        <!-- Data kamar akan ditampilkan di sini -->
-                        <tr>
-                            <td>Single Room</td>
-                            <td>Kamar tunggal dengan tempat tidur single.</td>
-                            <td>10</td>
-                            <td>90$</td>
-                            <td><button class="btn btn-primary" onclick="editKamar(0)">Edit</button></td>
-                        </tr>
-                        <tr>
-                            <td>Family Room</td>
-                            <td>Kamar untuk keluarga dengan tempat tidur double dan single.</td>
-                            <td>8</td>
-                            <td>120$</td>
-                            <td><button class="btn btn-primary" onclick="editKamar(1)">Edit</button></td>
-                        </tr>
-                        <tr>
-                            <td>Presidential Room</td>
-                            <td>Kamar mewah dengan tempat tidur king size dan ruang tamu.</td>
-                            <td>5</td>
-                            <td>250$</td>
-                            <td><button class="btn btn-primary" onclick="editKamar(2)">Edit</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="tabelPengunjung" style="display: none;">
-                <h2 class="mt-5">Informasi Pengunjung</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped mt-4">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Date Check In</th>
-                                <th>Date Check Out</th>
-                                <th>Adults</th>
-                                <th>Children</th>
-                                <th>Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>John Doe</td>
-                                <td>123-456-7890</td>
-                                <td>john@example.com</td>
-                                <td>2024-06-01</td>
-                                <td>2024-06-05</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>Friendly guest</td>
-                            </tr>
-                            <!-- Data pengunjung lainnya dapat ditambahkan di sini -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+<div id="loginForm" class="mt-5">
+<h1 class="mt-5">Admin Login</h1>
+<form onsubmit="return validateLogin()">
+<div class="mb-3">
+<label for="username" class="form-label">Username</label>
+<input type="text" class="form-control" id="username" required>
+<small id="usernameError" class="text-danger d-none">Username harus diisi.</small>
+</div>
+<div class="mb-3">
+<label for="password" class="form-label">Password</label>
+<input type="password" class="form-control" id="password" required>
+<small id="passwordError" class="text-danger d-none">Password harus diisi.</small>
+</div>
+<button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+<div id="adminPanel" style="display: none;">
+<h1 class="mt-5">Admin Panel</h1>
+<div class="row mt-4">
+<div class="col">
+<button class="btn btn-primary" onclick="toggleKelolaKamar()">Lihat Kelola Kamar</button>
+<button class="btn btn-primary" onclick="togglePengunjung()">Lihat Pengunjung</button>
+<button class="btn btn-danger" onclick="logout()">Logout</button>
+</div>
+</div>
+<div id="kelolaKamar" style="display: none;">
+<h2 class="mt-5">Kelola Kamar</h2>
+<table class="table table-striped mt-4">
+<thead>
+<tr>
+<th>Nama Kamar</th>
+<th>Deskripsi</th>
+<th>Jumlah Kamar</th>
+<th>Harga / per night</th>
+<th>Edit</th>
+</tr>
+</thead>
+<tbody id="daftarKamar">
+<!-- Data kamar akan ditampilkan di sini -->
+<tr>
+<td>Single Room</td>
+<td>Kamar tunggal dengan tempat tidur single.</td>
+<td>10</td>
+<td>90$</td>
+<td><button class="btn btn-primary" onclick="editKamar(0)">Edit</button></td>
+</tr>
+<tr>
+<td>Family Room</td>
+<td>Kamar untuk keluarga dengan tempat tidur double dan single.</td>
+<td>8</td>
+<td>120$</td>
+<td><button class="btn btn-primary" onclick="editKamar(1)">Edit</button></td>
+</tr>
+<tr>
+<td>Presidential Room</td>
+<td>Kamar mewah dengan tempat tidur king size dan ruang tamu.</td>
+<td>5</td>
+<td>250$</td>
+<td><button class="btn btn-primary" onclick="editKamar(2)">Edit</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabelPengunjung" style="display: none;">
+<h2 class="mt-5">Informasi Pengunjung</h2>
+<div class="table-responsive">
+<table class="table table-striped mt-4">
+<thead>
+<tr>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Date Check In</th>
+<th>Date Check Out</th>
+<th>Adults</th>
+<th>Children</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John Doe</td>
+<td>123-456-7890</td>
+<td>john@example.com</td>
+<td>2024-06-01</td>
+<td>2024-06-05</td>
+<td>2</td>
+<td>1</td>
+<td>Friendly guest</td>
+</tr>
+<!-- Data pengunjung lainnya dapat ditambahkan di sini -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        // Function to validate login credentials
-        function validateLogin() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            var usernameError = document.getElementById("usernameError");
-            var passwordError = document.getElementById("passwordError");
+<script>
+// Function to validate login credentials
+function validateLogin() {
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+var usernameError = document.getElementById("usernameError");
+var passwordError = document.getElementById("passwordError");
 
-            if (username.trim() === "") {
-                usernameError.classList.remove("d-none");
-            } else {
-                usernameError.classList.add("d-none");
-            }
+if (username.trim() === "") {
+usernameError.classList.remove("d-none");
+} else {
+usernameError.classList.add("d-none");
+}
 
-            if (password.trim() === "") {
-                passwordError.classList.remove("d-none");
-            } else {
-                passwordError.classList.add("d-none");
-            }
+if (password.trim() === "") {
+passwordError.classList.remove("d-none");
+} else {
+passwordError.classList.add("d-none");
+}
 
-            if (username.trim() === "" || password.trim() === "") {
-                return false; // Prevent form submission
-            }
+if (username.trim() === "" || password.trim() === "") {
+return false; // Prevent form submission
+}
 
-            if (username === "admin" && password === "admin") {
-                alert("Login berhasil!");
-                document.getElementById("loginForm").style.display = "none";
-                document.getElementById("adminPanel").style.display = "block";
-            } else {
-                alert("Username atau password salah. Silakan coba lagi.");
-            }
-            
-            return false; // Prevent form submission
-        }
+if (username === "admin" && password === "admin") {
+alert("Login berhasil!");
+document.getElementById("loginForm").style.display = "none";
+document.getElementById("adminPanel").style.display = "block";
+} else {
+alert("Username atau password salah. Silakan coba lagi.");
+}
 
-        // Function to check input fields in real-time
-        function checkInput() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            var usernameError = document.getElementById("usernameError");
-            var passwordError = document.getElementById("passwordError");
+return false; // Prevent form submission
+}
 
-            if (username.trim() === "") {
-                usernameError.classList.remove("d-none");
-            } else {
-                usernameError.classList.add("d-none");
-            }
+// Function to check input fields in real-time
+function checkInput() {
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+var usernameError = document.getElementById("usernameError");
+var passwordError = document.getElementById("passwordError");
 
-            if (password.trim() === "") {
-                passwordError.classList.remove("d-none");
-            } else {
-                passwordError.classList.add("d-none");
-            }
-        }
+if (username.trim() === "") {
+usernameError.classList.remove("d-none");
+} else {
+usernameError.classList.add("d-none");
+}
 
-        document.getElementById("username").addEventListener("input", checkInput);
-        document.getElementById("password").addEventListener("input", checkInput);
+if (password.trim() === "") {
+passwordError.classList.remove("d-none");
+} else {
+passwordError.classList.add("d-none");
+}
+}
 
-        // Functions to toggle the visibility of sections
-        function toggleKelolaKamar() {
-            var tabel = document.getElementById("kelolaKamar");
-            tabel.style.display = tabel.style.display === "none" ? "block" : "none";
-        }
+document.getElementById("username").addEventListener("input", checkInput);
+document.getElementById("password").addEventListener("input", checkInput);
 
-        function togglePengunjung() {
-            var tabel = document.getElementById("tabelPengunjung");
-            tabel.style.display = tabel.style.display === "none" ? "block" : "none";
-        }
+// Functions to toggle the visibility of sections
+function toggleKelolaKamar() {
+var tabel = document.getElementById("kelolaKamar");
+tabel.style.display = tabel.style.display === "none" ? "block" : "none";
+}
 
-        // Function to edit room details
-        function editKamar(index) {
-            var namaKamar = prompt("Masukkan nama kamar:", ["Single Room", "Family Room", "Presidential Room"][index]);
-            var deskripsi = prompt("Masukkan deskripsi kamar:", ["Kamar tunggal dengan tempat tidur single.", "Kamar untuk keluarga dengan tempat tidur double dan single.", "Kamar mewah dengan tempat tidur king size dan ruang tamu."][index]);
-            var jumlahKamar = prompt("Masukkan jumlah kamar:", [10, 8, 5][index]);
-            var harga = prompt("Masukkan harga kamar:", ["90$", "120$", "250$"][index]);
+function togglePengunjung() {
+var tabel = document.getElementById("tabelPengunjung");
+tabel.style.display = tabel.style.display === "none" ? "block" : "none";
+}
 
-            if (namaKamar !== null && deskripsi !== null && jumlahKamar !== null && harga !== null) {
-                document.getElementById("daftarKamar").rows[index].cells[0].innerText = namaKamar;
-                document.getElementById("daftarKamar").rows[index].cells[1].innerText = deskripsi;
-                document.getElementById("daftarKamar").rows[index].cells[2].innerText = jumlahKamar;
-                document.getElementById("daftarKamar").rows[index].cells[3].innerText = harga;
-            }
-        }
-    </script>
+// Function to edit room details
+function editKamar(index) {
+var namaKamar = prompt("Masukkan nama kamar:", ["Single Room", "Family Room", "Presidential Room"][index]);
+var deskripsi = prompt("Masukkan deskripsi kamar:", ["Kamar tunggal dengan tempat tidur single.", "Kamar untuk keluarga dengan tempat tidur double dan single.", "Kamar mewah dengan tempat tidur king size dan ruang tamu."][index]);
+var jumlahKamar = prompt("Masukkan jumlah kamar:", [10, 8, 5][index]);
+var harga = prompt("Masukkan harga kamar:", ["90$", "120$", "250$"][index]);
+
+if (namaKamar !== null && deskripsi !== null && jumlahKamar !== null && harga !== null) {
+document.getElementById("daftarKamar").rows[index].cells[0].innerText = namaKamar;
+document.getElementById("daftarKamar").rows[index].cells[1].innerText = deskripsi;
+document.getElementById("daftarKamar").rows[index].cells[2].innerText = jumlahKamar;
+document.getElementById("daftarKamar").rows[index].cells[3].innerText = harga;
+}
+}
+
+// Function to logout
+function logout() {
+alert("Logout berhasil!");
+document.getElementById("adminPanel").style.display = "none";
+document.getElementById("loginForm").style.display = "block";
+}
+</script>
 </body>
 </html>
